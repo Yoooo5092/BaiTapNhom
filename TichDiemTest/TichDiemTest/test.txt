@@ -1,0 +1,10 @@
+1|Nguyễn Văn An|0901234567|an.nguyen@email.com|1250|2024-01-15|Bạc
+2|Trần Thị Bình|0912345678|binh.tran@email.com|3200|2024-02-20|Vàng
+3|Lê Văn Cường|0923456789|cuong.le@email.com|850|2024-03-10|Đồng
+4|Phạm Thị Dung|0934567890|dung.pham@email.com|6700|2024-01-05|Vàng
+5|Hoàng Văn Em|0945678901|em.hoang@email.com|210|2024-04-12|Đồng
+6|Võ Thị Phượng|0956789012|phuong.vo@email.com|4500|2024-02-28|Vàng
+7|Đặng Văn Giang|0967890123|giang.dang@email.com|9800|2023-12-01|Kim cương
+8|Bùi Thị Hương|0978901234|huong.bui@email.com|150|2024-05-01|Đồng
+9|Ngô Văn Inh|0989012345|inh.ngo@email.com|2300|2024-03-18|Bạc
+10|Dương Thị Khánh|0990123456|khanh.duong@email.com|5600|2024-01-30|Vàng
