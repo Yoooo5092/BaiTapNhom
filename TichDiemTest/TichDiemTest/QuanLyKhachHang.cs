@@ -94,6 +94,8 @@ namespace TichDiemTest
                 return false;
             }
             danhSachKH.Remove(kh);
+            XuatRaFile(duongDanFile, out loi);
+
             DuLieuDaThayDoi?.Invoke();
             return true;
         }
@@ -134,6 +136,8 @@ namespace TichDiemTest
                 return false;
             }
             kh.CongDiem(diem);
+            XuatRaFile(duongDanFile, out loi);
+
             DuLieuDaThayDoi?.Invoke();
             return true;
         }
@@ -155,6 +159,8 @@ namespace TichDiemTest
                 loi = "Điểm không đủ để đổi quà";
                 return false;
             }
+            XuatRaFile(duongDanFile, out loi);
+
             DuLieuDaThayDoi?.Invoke();
             return true;
         }

@@ -28,52 +28,86 @@ namespace TichDiemTest
 
         private void InitializeComponent()
         {
-            this.lblTieuDe = new Label();
-            this.lblThongTin = new Label();
-            this.numDiem = new NumericUpDown();
-            this.btnXacNhan = new Button();
-            this.btnHuy = new Button();
+            this.lblTieuDe = new System.Windows.Forms.Label();
+            this.lblThongTin = new System.Windows.Forms.Label();
+            this.numDiem = new System.Windows.Forms.NumericUpDown();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numDiem)).BeginInit();
             this.SuspendLayout();
-
-            // Form
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblTieuDe.Location = new System.Drawing.Point(20, 20);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(360, 25);
+            this.lblTieuDe.TabIndex = 0;
+            // 
+            // lblThongTin
+            // 
+            this.lblThongTin.Location = new System.Drawing.Point(20, 55);
+            this.lblThongTin.Name = "lblThongTin";
+            this.lblThongTin.Size = new System.Drawing.Size(360, 60);
+            this.lblThongTin.TabIndex = 1;
+            // 
+            // numDiem
+            // 
+            this.numDiem.Location = new System.Drawing.Point(20, 130);
+            this.numDiem.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numDiem.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDiem.Name = "numDiem";
+            this.numDiem.Size = new System.Drawing.Size(360, 20);
+            this.numDiem.TabIndex = 2;
+            this.numDiem.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.Location = new System.Drawing.Point(180, 180);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(90, 35);
+            this.btnXacNhan.TabIndex = 3;
+            this.btnXacNhan.Click += new System.EventHandler(this.BtnXacNhan_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(280, 180);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(90, 35);
+            this.btnHuy.TabIndex = 4;
+            this.btnHuy.Text = "Hủy";
+            // 
+            // FormDiem
+            // 
+            this.AcceptButton = this.btnXacNhan;
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(400, 250);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.Controls.Add(this.lblTieuDe);
+            this.Controls.Add(this.lblThongTin);
+            this.Controls.Add(this.numDiem);
+            this.Controls.Add(this.btnXacNhan);
+            this.Controls.Add(this.btnHuy);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.StartPosition = FormStartPosition.CenterParent;
             this.Name = "FormDiem";
-
-            // Tiêu đề
-            lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            lblTieuDe.Location = new System.Drawing.Point(20, 20);
-            lblTieuDe.Size = new System.Drawing.Size(360, 25);
-
-            // Thông tin KH
-            lblThongTin.Location = new System.Drawing.Point(20, 55);
-            lblThongTin.Size = new System.Drawing.Size(360, 60);
-
-            // Số điểm
-            numDiem.Location = new System.Drawing.Point(20, 130);
-            numDiem.Size = new System.Drawing.Size(360, 25);
-            numDiem.Maximum = 1000000;
-            numDiem.Minimum = 1;
-            numDiem.Value = 100;
-
-            // Buttons
-            btnXacNhan.Location = new System.Drawing.Point(180, 180);
-            btnXacNhan.Size = new System.Drawing.Size(90, 35);
-            btnXacNhan.Click += BtnXacNhan_Click;
-
-            btnHuy.Text = "Hủy";
-            btnHuy.Location = new System.Drawing.Point(280, 180);
-            btnHuy.Size = new System.Drawing.Size(90, 35);
-
-            this.Controls.AddRange(new Control[] { lblTieuDe, lblThongTin, numDiem, btnXacNhan, btnHuy });
-            this.AcceptButton = btnXacNhan;
-            this.CancelButton = btnHuy;
-            this.ResumeLayout(false);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             ((System.ComponentModel.ISupportInitialize)(this.numDiem)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         private void BtnXacNhan_Click(object sender, EventArgs e)
@@ -98,6 +132,13 @@ namespace TichDiemTest
         #region Designer fields
         private Label lblTieuDe, lblThongTin;
         private NumericUpDown numDiem;
+
+        private void btnXacNhan_Click_1(object sender, EventArgs e)
+        {
+
+
+        }
+
         private Button btnXacNhan, btnHuy;
         #endregion
     }
