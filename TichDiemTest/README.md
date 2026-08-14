@@ -76,37 +76,5 @@ Mã|Họ tên|SĐT|Email|Điểm|Ngày ĐK|Cấp bậc
 | `Ctrl+E` | Xuất ra file |
 | `Esc` | Thoát ứng dụng |
 
-## 📁 File test.txt mẫu
-Đã kèm sẵn trong thư mục dự án với 10 khách hàng:
-```
-1|Nguyễn Văn An|0901234567|an.nguyen@email.com|1250|2024-01-15|Bạc
-2|Trần Thị Bình|0912345678|binh.tran@email.com|3200|2024-02-20|Vàng
-...
-```
-
-## 💡 Điểm học tập (cho sinh viên)
-1. **Tách class**: Model (KhachHang) tách biệt Logic (QuanLyKhachHang) tách biệt UI (Forms)
-2. **Event-driven**: QuanLyKhachHang dùng event `DuLieuDaThayDoi` để báo UI cập nhật
-3. **Validation**: Kiểm tra rỗng, trùng SĐT, định dạng email, điểm đủ...
-4. **File I/O**: Đọc/ghi file text đơn giản, parse an toàn với try-catch
-5. **DataGridView binding**: Bind List<T> trực tiếp, format column dễ đọc
-6. **ContextMenuStrip**: Chuột phải trên grid để thao tác nhanh
-7. **Form tái sử dụng**: FormKhachHang dùng cho cả Thêm và Sửa
-8. **Chart cơ bản**: System.Windows.Forms.DataVisualization.Charting
-
-## 🐛 Xử lý lỗi thường gặp
-| Lỗi | Nguyên nhân | Khắc phục |
-|-----|-------------|-----------|
-| Build fail "GenerateResource" | Thiếu .NET Framework 4.7.2 targeting pack | Cài Visual Studio với workload .NET Desktop |
-| Chart không hiện | Thiếu reference | Đã thêm `System.Windows.Forms.DataVisualization` trong csproj |
-| File test.txt không đọc được | Sai đường dẫn | Đặt file cạnh .exe (bin\Debug) hoặc dùng nút Nhập file để chọn |
-
-## 📝 Mở rộng gợi ý
-- Thêm lịch sử giao dịch (điểm +/−)
-- In báo cáo / Xuất Excel
-- Đăng nhập phân quyền (Admin/Staff)
-- Kết nối SQL Server thay vì file text
-- Gửi email/SMS chúc mừng sinh nhật, thông báo điểm
-
 ---
 *Dự án lab mẫu - C# Windows Forms .NET Framework 4.7.2*
