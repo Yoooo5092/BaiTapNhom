@@ -6,44 +6,33 @@ using System.Windows.Forms;
 
 namespace TichDiemTest
 {
-    /// <summary>
-    /// Class quản lý danh sách khách hàng - xử lý logic nghiệp vụ
-    /// </summary>
     public class QuanLyKhachHang
     {
         private List<KhachHang> danhSachKH = new List<KhachHang>();
         private int maTuDong = 1;
         private string duongDanFile = "test.txt";
 
-        // Event để báo khi dữ liệu thay đổi (để cập nhật UI)
         public event Action DuLieuDaThayDoi;
 
         public QuanLyKhachHang() { }
 
-        /// <summary>
-        /// Lấy danh sách khách hàng (readonly)
-        /// </summary>
         public List<KhachHang> LayDanhSach()
         {
-            return new List<KhachHang>(danhSachKH); // Trả về bản sao để bảo vệ dữ liệu
+            return new List<KhachHang>(danhSachKH);
         }
 
-        /// <summary>
-        /// Thêm khách hàng mới
-        /// </summary>
         public bool Them(KhachHang kh, out string loi)
         {
             loi = "";
-            if (!kh.HopLe(out loi)) return false;
+            if (!kh.HopLe(out loi)) 
+                return false;
 
-            // Kiểm tra trùng SĐT
             if (danhSachKH.Any(x => x.SoDienThoai == kh.SoDienThoai))
             {
                 loi = "Số điện thoại đã tồn tại";
                 return false;
             }
 
-            // Gán mã tự động
             kh.MaKH = maTuDong++;
             danhSachKH.Add(kh);
             XuatRaFile(duongDanFile, out loi);
@@ -51,9 +40,6 @@ namespace TichDiemTest
             return true;
         }
 
-        /// <summary>
-        /// Cập nhật thông tin khách hàng
-        /// </summary>
         public bool CapNhat(KhachHang khMoi, out string loi)
         {
             loi = "";
@@ -66,7 +52,6 @@ namespace TichDiemTest
                 return false;
             }
 
-            // Kiểm tra trùng SĐT (trừ chính nó)
             if (danhSachKH.Any(x => x.SoDienThoai == khMoi.SoDienThoai && x.MaKH != khMoi.MaKH))
             {
                 loi = "Số điện thoại đã được dùng bởi khách hàng khác";
@@ -81,9 +66,6 @@ namespace TichDiemTest
             return true;
         }
 
-        /// <summary>
-        /// Xóa khách hàng
-        /// </summary>
         public bool Xoa(int maKH, out string loi)
         {
             loi = "";
@@ -99,10 +81,6 @@ namespace TichDiemTest
             DuLieuDaThayDoi?.Invoke();
             return true;
         }
-
-        /// <summary>
-        /// Tìm kiếm khách hàng theo từ khóa (tên, SĐT, email)
-        /// </summary>
         public List<KhachHang> TimKiem(string tuKhoa)
         {
             if (string.IsNullOrWhiteSpace(tuKhoa)) return LayDanhSach();
@@ -115,17 +93,11 @@ namespace TichDiemTest
             ).ToList();
         }
 
-        /// <summary>
-        /// Lấy khách hàng theo mã
-        /// </summary>
         public KhachHang LayTheoMa(int maKH)
         {
             return danhSachKH.FirstOrDefault(x => x.MaKH == maKH);
         }
 
-        /// <summary>
-        /// Cộng điểm cho khách hàng
-        /// </summary>
         public bool CongDiem(int maKH, int diem, out string loi)
         {
             loi = "";
@@ -141,10 +113,6 @@ namespace TichDiemTest
             DuLieuDaThayDoi?.Invoke();
             return true;
         }
-
-        /// <summary>
-        /// Đổi quà (trừ điểm)
-        /// </summary>
         public bool DoiQua(int maKH, int diem, out string loi)
         {
             loi = "";
@@ -165,9 +133,6 @@ namespace TichDiemTest
             return true;
         }
 
-        /// <summary>
-        /// Nhập từ file text (format: MaKH|HoTen|SDT|Email|Diem|NgayDK|CapBac)
-        /// </summary>
         public bool NhapTuFile(string duongDan, out string loi, out int soLuong)
         {
             loi = "";
@@ -181,21 +146,23 @@ namespace TichDiemTest
 
             try
             {
-                var lines = File.ReadAllLines(duongDan);
                 int dem = 0;
-                foreach (var line in lines)
+                using (StreamReader sr = new StreamReader(duongDan))
                 {
-                    if (string.IsNullOrWhiteSpace(line)) continue;
-
-                    var kh = KhachHang.TuChuoi(line);
-                    if (kh != null)
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        // Kiểm tra trùng mã hoặc SĐT
-                        if (!danhSachKH.Any(x => x.MaKH == kh.MaKH || x.SoDienThoai == kh.SoDienThoai))
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+
+                        var kh = KhachHang.TuChuoi(line);
+                        if (kh != null)
                         {
-                            danhSachKH.Add(kh);
-                            if (kh.MaKH >= maTuDong) maTuDong = kh.MaKH + 1;
-                            dem++;
+                            if (!danhSachKH.Any(x => x.MaKH == kh.MaKH || x.SoDienThoai == kh.SoDienThoai))
+                            {
+                                danhSachKH.Add(kh);
+                                if (kh.MaKH >= maTuDong) maTuDong = kh.MaKH + 1;
+                                dem++;
+                            }
                         }
                     }
                 }
@@ -210,16 +177,18 @@ namespace TichDiemTest
             }
         }
 
-        /// <summary>
-        /// Xuất ra file text
-        /// </summary>
         public bool XuatRaFile(string duongDan, out string loi)
         {
             loi = "";
             try
             {
-                var lines = danhSachKH.Select(kh => kh.ToString()).ToArray();
-                File.WriteAllLines(duongDan, lines);
+                using (StreamWriter sw = new StreamWriter(duongDan, false))
+                {
+                    foreach (var kh in danhSachKH)
+                    {
+                        sw.WriteLine(kh.ToString());
+                    }
+                }
                 return true;
             }
             catch (Exception ex)
@@ -229,9 +198,6 @@ namespace TichDiemTest
             }
         }
 
-        /// <summary>
-        /// Thống kê nhanh
-        /// </summary>
         public (int tongKH, int tongDiem, int caoNhat, int thapNhat) ThongKe()
         {
             if (danhSachKH.Count == 0) return (0, 0, 0, 0);
@@ -243,18 +209,10 @@ namespace TichDiemTest
                 danhSachKH.Min(x => x.DiemTichLuy)
             );
         }
-
-        /// <summary>
-        /// Thống kê theo cấp bạc
-        /// </summary>
         public Dictionary<string, int> ThongKeTheoCapBac()
         {
             return danhSachKH.GroupBy(x => x.CapBac)
                 .ToDictionary(g => g.Key, g => g.Count());
         }
-
-        /// <summary>
-        /// Tạo dữ liệu mẫu cho test
-        /// </summary>
     }
 }
