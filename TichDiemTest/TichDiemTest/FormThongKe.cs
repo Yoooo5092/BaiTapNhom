@@ -46,5 +46,10 @@ namespace TichDiemTest
                 NgàyĐK = x.NgayDangKy.ToString("dd/MM/yyyy")
             }).ToList();
         }
+
+        private void FormThongKe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

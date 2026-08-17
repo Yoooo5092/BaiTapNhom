@@ -49,9 +49,9 @@ namespace TichDiemTest
             // 
             this.lblTongQuan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTongQuan.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTongQuan.Location = new System.Drawing.Point(0, 0);
+            this.lblTongQuan.Location = new System.Drawing.Point(20, 20);
             this.lblTongQuan.Name = "lblTongQuan";
-            this.lblTongQuan.Size = new System.Drawing.Size(100, 23);
+            this.lblTongQuan.Size = new System.Drawing.Size(760, 80);
             this.lblTongQuan.TabIndex = 0;
             this.lblTongQuan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -109,10 +109,12 @@ namespace TichDiemTest
             this.Name = "FormThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thống kê khách hàng";
+            this.Load += new System.EventHandler(this.FormThongKe_Load);
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartCapBac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTop)).EndInit();
             this.ResumeLayout(false);
+
         }
         #endregion
 

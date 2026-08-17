@@ -35,7 +35,6 @@ namespace TichDiemTest
 
             numTienHoaDon.ValueChanged += NumTienHoaDon_ValueChanged;
             numDiem.ValueChanged += NumDiem_ValueChanged;
-            btnXacNhan.Click += BtnXacNhan_Click;
         }
 
         private void NumTienHoaDon_ValueChanged(object sender, EventArgs e)

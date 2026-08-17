@@ -73,6 +73,7 @@ namespace TichDiemTest
             this.numTienHoaDon.Size = new System.Drawing.Size(360, 20);
             this.numTienHoaDon.TabIndex = 3;
             this.numTienHoaDon.ThousandsSeparator = true;
+            this.numTienHoaDon.ValueChanged += new System.EventHandler(this.NumTienHoaDon_ValueChanged);
             // 
             // lblDiem
             // 
@@ -94,6 +95,7 @@ namespace TichDiemTest
             this.numDiem.Size = new System.Drawing.Size(360, 20);
             this.numDiem.TabIndex = 5;
             this.numDiem.ThousandsSeparator = true;
+            this.numDiem.ValueChanged += new System.EventHandler(this.NumDiem_ValueChanged);
             // 
             // btnXacNhan
             // 
@@ -101,6 +103,7 @@ namespace TichDiemTest
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(90, 35);
             this.btnXacNhan.TabIndex = 6;
+            this.btnXacNhan.Click += new System.EventHandler(this.BtnXacNhan_Click);
             // 
             // btnHuy
             // 

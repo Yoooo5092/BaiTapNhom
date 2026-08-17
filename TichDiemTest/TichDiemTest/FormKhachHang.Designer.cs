@@ -172,6 +172,7 @@ namespace TichDiemTest
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
