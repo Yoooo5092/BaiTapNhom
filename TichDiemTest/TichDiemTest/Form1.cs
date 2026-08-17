@@ -30,6 +30,7 @@ namespace TichDiemTest
             cmsGrid.Items.Add("Cập nhật", null, (s, e) => SuaKhachHang());
             cmsGrid.Items.Add("Cộng điểm", null, (s, e) => XuLyDiem(true));
             cmsGrid.Items.Add("Đổi quà", null, (s, e) => XuLyDiem(false));
+            cmsGrid.Items.Add("Xem lịch sử", null, (s, e) => XemLichSu()); // Dòng mới chèn thêm
             cmsGrid.Items.Add(new ToolStripSeparator());
             cmsGrid.Items.Add("Xóa", null, (s, e) => XoaKhachHang());
 
@@ -199,6 +200,17 @@ namespace TichDiemTest
                 {
                     MessageBox.Show(loi, "Lỗi xuất file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void XemLichSu()
+        {
+            var kh = LayKhachHangDangChon();
+            if (kh == null) return;
+
+            using (var frm = new FormLichSu(qlKH, kh))
+            {
+                frm.ShowDialog(this);
             }
         }
 

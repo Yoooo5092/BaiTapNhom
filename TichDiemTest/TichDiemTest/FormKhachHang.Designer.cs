@@ -59,6 +59,7 @@ namespace TichDiemTest
             // txtDiem
             // 
             this.txtDiem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDiem.Enabled = false;
             this.txtDiem.Location = new System.Drawing.Point(180, 170);
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(100, 20);
@@ -67,6 +68,7 @@ namespace TichDiemTest
             // txtCapBac
             // 
             this.txtCapBac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtCapBac.Enabled = false;
             this.txtCapBac.Location = new System.Drawing.Point(180, 208);
             this.txtCapBac.Name = "txtCapBac";
             this.txtCapBac.Size = new System.Drawing.Size(100, 20);
@@ -75,6 +77,7 @@ namespace TichDiemTest
             // txtNgayDK
             // 
             this.txtNgayDK.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtNgayDK.Enabled = false;
             this.txtNgayDK.Location = new System.Drawing.Point(180, 134);
             this.txtNgayDK.Name = "txtNgayDK";
             this.txtNgayDK.Size = new System.Drawing.Size(100, 20);

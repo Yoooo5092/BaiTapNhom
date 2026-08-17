@@ -41,24 +41,26 @@ namespace TichDiemTest
             this.btnThongKe = new System.Windows.Forms.ToolStripButton();
             this.ss = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.pnlSearch.SuspendLayout();
             this.ts.SuspendLayout();
             this.ss.SuspendLayout();
             this.SuspendLayout();
-
+            // 
             // pnlMain
+            // 
             this.pnlMain.Controls.Add(this.dgvKhachHang);
             this.pnlMain.Controls.Add(this.pnlSearch);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 30);
+            this.pnlMain.Location = new System.Drawing.Point(0, 25);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlMain.Size = new System.Drawing.Size(984, 558);
-
+            this.pnlMain.Size = new System.Drawing.Size(984, 563);
+            this.pnlMain.TabIndex = 1;
+            // 
             // dgvKhachHang
+            // 
             this.dgvKhachHang.AllowUserToAddRows = false;
             this.dgvKhachHang.AllowUserToDeleteRows = false;
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -70,14 +72,17 @@ namespace TichDiemTest
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.ReadOnly = true;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachHang.Size = new System.Drawing.Size(974, 498);
+            this.dgvKhachHang.Size = new System.Drawing.Size(974, 503);
+            this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellDoubleClick);
-
+            // 
             // cmsGrid
+            // 
             this.cmsGrid.Name = "cmsGrid";
             this.cmsGrid.Size = new System.Drawing.Size(61, 4);
-
+            // 
             // pnlSearch
+            // 
             this.pnlSearch.Controls.Add(this.lblCount);
             this.pnlSearch.Controls.Add(this.btnClear);
             this.pnlSearch.Controls.Add(this.txtTimKiem);
@@ -86,82 +91,134 @@ namespace TichDiemTest
             this.pnlSearch.Location = new System.Drawing.Point(5, 5);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(974, 50);
-
+            this.pnlSearch.TabIndex = 1;
+            // 
             // lblCount
+            // 
             this.lblCount.AutoSize = true;
             this.lblCount.Location = new System.Drawing.Point(450, 15);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(76, 13);
+            this.lblCount.Size = new System.Drawing.Size(73, 13);
+            this.lblCount.TabIndex = 0;
             this.lblCount.Text = "0 khách hàng";
-
+            // 
             // btnClear
+            // 
             this.btnClear.Location = new System.Drawing.Point(400, 10);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(28, 23);
+            this.btnClear.TabIndex = 1;
             this.btnClear.Text = "X";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-
+            // 
             // txtTimKiem
+            // 
             this.txtTimKiem.Location = new System.Drawing.Point(90, 12);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(300, 20);
+            this.txtTimKiem.TabIndex = 2;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.TxtTimKiem_TextChanged);
-
+            // 
             // lblSearch
+            // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Location = new System.Drawing.Point(10, 15);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(52, 13);
+            this.lblSearch.TabIndex = 3;
             this.lblSearch.Text = "Tìm kiếm:";
-
+            // 
             // ts
+            // 
             this.ts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnThem, this.btnSua, this.btnXoa, new System.Windows.Forms.ToolStripSeparator(),
-            this.btnCongDiem, this.btnDoiQua, new System.Windows.Forms.ToolStripSeparator(),
-            this.btnNhapFile, this.btnXuatFile, new System.Windows.Forms.ToolStripSeparator(),
+            this.btnThem,
+            this.btnSua,
+            this.btnXoa,
+            this.btnCongDiem,
+            this.btnDoiQua,
+            this.btnNhapFile,
+            this.btnXuatFile,
             this.btnThongKe});
             this.ts.Location = new System.Drawing.Point(0, 0);
             this.ts.Name = "ts";
-            this.ts.Size = new System.Drawing.Size(984, 30);
-
-            // ToolStrip Buttons
+            this.ts.Size = new System.Drawing.Size(984, 25);
+            this.ts.TabIndex = 2;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(42, 22);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-
+            // 
+            // btnSua
+            // 
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(30, 22);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(31, 22);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-
+            // 
+            // btnCongDiem
+            // 
+            this.btnCongDiem.Name = "btnCongDiem";
+            this.btnCongDiem.Size = new System.Drawing.Size(70, 22);
             this.btnCongDiem.Text = "Cộng điểm";
             this.btnCongDiem.Click += new System.EventHandler(this.btnCongDiem_Click);
-
+            // 
+            // btnDoiQua
+            // 
+            this.btnDoiQua.Name = "btnDoiQua";
+            this.btnDoiQua.Size = new System.Drawing.Size(52, 22);
             this.btnDoiQua.Text = "Đổi quà";
             this.btnDoiQua.Click += new System.EventHandler(this.btnDoiQua_Click);
-
+            // 
+            // btnNhapFile
+            // 
+            this.btnNhapFile.Name = "btnNhapFile";
+            this.btnNhapFile.Size = new System.Drawing.Size(59, 22);
             this.btnNhapFile.Text = "Nhập file";
             this.btnNhapFile.Click += new System.EventHandler(this.btnNhapFile_Click);
-
+            // 
+            // btnXuatFile
+            // 
+            this.btnXuatFile.Name = "btnXuatFile";
+            this.btnXuatFile.Size = new System.Drawing.Size(54, 22);
             this.btnXuatFile.Text = "Xuất file";
             this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
-
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(61, 22);
             this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.Visible = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-
+            // 
             // ss
-            this.ss.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
+            // 
+            this.ss.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
             this.ss.Location = new System.Drawing.Point(0, 588);
             this.ss.Name = "ss";
             this.ss.Size = new System.Drawing.Size(984, 22);
-
+            this.ss.TabIndex = 3;
+            // 
             // lblStatus
+            // 
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(53, 17);
+            this.lblStatus.Size = new System.Drawing.Size(54, 17);
             this.lblStatus.Text = "Sẵn sàng";
-
+            // 
             // Form1
+            // 
             this.ClientSize = new System.Drawing.Size(984, 610);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.ts);
@@ -169,9 +226,8 @@ namespace TichDiemTest
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Tích Điểm Khách Hàng";
-
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.pnlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.ts.ResumeLayout(false);
@@ -180,6 +236,7 @@ namespace TichDiemTest
             this.ss.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

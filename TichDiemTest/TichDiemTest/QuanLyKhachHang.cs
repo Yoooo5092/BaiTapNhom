@@ -11,10 +11,16 @@ namespace TichDiemTest
         private List<KhachHang> danhSachKH = new List<KhachHang>();
         private int maTuDong = 1;
         private string duongDanFile = "test.txt";
+        private List<LichSuGiaoDich> danhSachLichSu = new List<LichSuGiaoDich>();
+        private string fileLichSu = "lichsu.txt";
 
         public event Action DuLieuDaThayDoi;
 
-        public QuanLyKhachHang() { }
+        public QuanLyKhachHang()
+        {
+            // Thêm dòng này để app tự nạp lịch sử khi vừa bật lên
+            DocLichSuTuFile();
+        }
 
         public List<KhachHang> LayDanhSach()
         {
@@ -102,32 +108,35 @@ namespace TichDiemTest
         {
             loi = "";
             var kh = LayTheoMa(maKH);
-            if (kh == null)
-            {
-                loi = "Không tìm thấy khách hàng";
-                return false;
-            }
+            if (kh == null) return false;
+
             kh.CongDiem(diem);
             XuatRaFile(duongDanFile, out loi);
+
+            // THÊM 2 DÒNG NÀY ĐỂ LƯU LỊCH SỬ
+            danhSachLichSu.Add(new LichSuGiaoDich(maKH, "Cộng điểm", diem));
+            GhiLichSuRaFile();
 
             DuLieuDaThayDoi?.Invoke();
             return true;
         }
+
         public bool DoiQua(int maKH, int diem, out string loi)
         {
             loi = "";
             var kh = LayTheoMa(maKH);
-            if (kh == null)
-            {
-                loi = "Không tìm thấy khách hàng";
-                return false;
-            }
+            if (kh == null) return false;
+
             if (!kh.TruDiem(diem))
             {
                 loi = "Điểm không đủ để đổi quà";
                 return false;
             }
             XuatRaFile(duongDanFile, out loi);
+
+            // THÊM 2 DÒNG NÀY ĐỂ LƯU LỊCH SỬ
+            danhSachLichSu.Add(new LichSuGiaoDich(maKH, "Đổi quà", -diem));
+            GhiLichSuRaFile();
 
             DuLieuDaThayDoi?.Invoke();
             return true;
@@ -213,6 +222,35 @@ namespace TichDiemTest
         {
             return danhSachKH.GroupBy(x => x.CapBac)
                 .ToDictionary(g => g.Key, g => g.Count());
+        }
+        public void DocLichSuTuFile()
+        {
+            danhSachLichSu.Clear();
+            if (!File.Exists(fileLichSu)) return;
+
+            using (StreamReader sr = new StreamReader(fileLichSu))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    var ls = LichSuGiaoDich.TuChuoi(line);
+                    if (ls != null) danhSachLichSu.Add(ls);
+                }
+            }
+        }
+
+        public void GhiLichSuRaFile()
+        {
+            using (StreamWriter sw = new StreamWriter(fileLichSu, false))
+            {
+                foreach (var ls in danhSachLichSu) sw.WriteLine(ls.ToString());
+            }
+        }
+
+        public List<LichSuGiaoDich> LayLichSuTheoKH(int maKH)
+        {
+            // Lọc lịch sử của khách này và xếp giao dịch mới nhất lên đầu
+            return danhSachLichSu.Where(x => x.MaKH == maKH).OrderByDescending(x => x.NgayGio).ToList();
         }
     }
 }
