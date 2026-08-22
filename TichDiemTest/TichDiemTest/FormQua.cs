@@ -17,6 +17,7 @@ namespace TichDiemTest
             qlKH = ql;
             LoadDanhSachQua();
             qlKH.DanhSachQuaDaThayDoi += () => LoadDanhSachQua();
+            numSoLuongTon.Enabled = false;
         }
 
         private void LoadDanhSachQua()
@@ -126,6 +127,8 @@ namespace TichDiemTest
         private void BtnLuuQua_Click(object sender, EventArgs e)
         {
             string loi;
+            var item = dgvQua.CurrentRow.DataBoundItem;
+            int maQua = (int)item.GetType().GetProperty("MaQua").GetValue(item);
             var qua = new Qua
             {
                 TenQua = txtTenQua.Text.Trim(),
@@ -135,7 +138,8 @@ namespace TichDiemTest
                 DonViTinh = txtDonViTinh.Text.Trim(),
                 HinhAnh = txtHinhAnh.Text.Trim(),
                 TrangThai = chkTrangThai.Checked,
-                NgayTao = DateTime.Now
+                NgayTao = DateTime.Now,
+                MaQua = maQua
             };
 
             bool ok = laThemMoi

@@ -270,8 +270,7 @@ namespace TichDiemTest
                 new SqlParameter("@ma", maQua));
 
             DatabaseHelper.ExecuteNonQuery(
-                "UPDATE KhachHang SET DiemTichLuy = DiemTichLuy - @diem WHERE MaKH = @ma",
-                new SqlParameter("@diem", tongDiemCan),
+                "UPDATE KhachHang SET DiemTichLuy = 0 WHERE MaKH = @ma",
                 new SqlParameter("@ma", maKH));
 
             DatabaseHelper.ExecuteNonQuery(
@@ -403,9 +402,9 @@ namespace TichDiemTest
                 new SqlParameter("@ten", thuocMoi.TenThuoc),
                 new SqlParameter("@dvt", thuocMoi.DonViTinh),
                 new SqlParameter("@ma", thuocMoi.MaThuoc));
-            if (check != null && Convert.ToInt32(check) > 0)
+            if (check == null)
             {
-                loi = "Thuốc đã tồn tại trùng tên và đơn vị tính";
+                loi = "Thuốc không tồn tại";
                 return false;
             }
 

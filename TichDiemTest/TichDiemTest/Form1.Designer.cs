@@ -296,6 +296,9 @@ namespace TichDiemTest
             this.dgvKHBan.Size = new System.Drawing.Size(328, 536);
             this.dgvKHBan.TabIndex = 1;
             this.dgvKHBan.SelectionChanged += new System.EventHandler(this.DgvKHBan_SelectionChanged);
+            this.dgvKHBan.DoubleClick += new System.EventHandler(this.DgvKHBan_DoubleClick);
+
+
 
             // cmsKhachHang
             this.cmsKhachHang.Name = "cmsKhachHang";

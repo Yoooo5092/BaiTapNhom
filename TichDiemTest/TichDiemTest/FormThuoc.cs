@@ -17,6 +17,7 @@ namespace TichDiemTest
             qlKH = ql;
             LoadDanhSachThuoc();
             qlKH.DanhSachThuocDaThayDoi += delegate { LoadDanhSachThuoc(); };
+            numSoLuongTon.Enabled = false;
         }
 
         private void LoadDanhSachThuoc()
@@ -131,7 +132,8 @@ namespace TichDiemTest
                 SoLuongTon = (int)numSoLuongTon.Value,
                 NhaSanXuat = txtNhaSanXuat.Text.Trim(),
                 HanSuDung = dtpHanSuDung.Value,
-                MoTa = txtMoTa.Text.Trim()
+                MoTa = txtMoTa.Text.Trim(),
+                MaThuoc = thuocDangChon.MaThuoc
             };
 
             bool ok = laThemMoi

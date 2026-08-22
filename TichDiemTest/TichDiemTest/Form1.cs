@@ -120,6 +120,11 @@ namespace TichDiemTest
             }
         }
 
+        private void DgvKHBan_DoubleClick(object sender, EventArgs e)
+        {
+            SuaKhachHang();
+        }
+
         private void DgvKHBan_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvKHBan.CurrentRow != null && dgvKHBan.CurrentRow.DataBoundItem != null)
@@ -566,10 +571,9 @@ namespace TichDiemTest
                     "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             var result = MessageBox.Show(
-                string.Format("Xác nhận đổi quà tặng?\n\n- Khách: {0}\n- Quà: {1} (x{2})\n- Điểm trừ: -{3:N0}\n- Điểm còn lại: {4:N0}",
-                khachHangQuaDangChon.HoTen, quaDangChon.TenQua, soLuong, tongDiemCan, khachHangQuaDangChon.DiemTichLuy - tongDiemCan),
+                string.Format("Xác nhận đổi quà tặng?\n\n- Khách: {0}\n- Quà: {1} (x{2})\n- Điểm còn lại: 0",
+                khachHangQuaDangChon.HoTen, quaDangChon.TenQua, soLuong),
                 "Xác nhận đổi quà", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
