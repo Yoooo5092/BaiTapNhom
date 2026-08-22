@@ -127,8 +127,6 @@ namespace TichDiemTest
         private void BtnLuuQua_Click(object sender, EventArgs e)
         {
             string loi;
-            var item = dgvQua.CurrentRow.DataBoundItem;
-            int maQua = (int)item.GetType().GetProperty("MaQua").GetValue(item);
             var qua = new Qua
             {
                 TenQua = txtTenQua.Text.Trim(),
@@ -138,13 +136,21 @@ namespace TichDiemTest
                 DonViTinh = txtDonViTinh.Text.Trim(),
                 HinhAnh = txtHinhAnh.Text.Trim(),
                 TrangThai = chkTrangThai.Checked,
-                NgayTao = DateTime.Now,
-                MaQua = maQua
+                NgayTao = DateTime.Now
             };
 
-            bool ok = laThemMoi
-                ? qlKH.ThemQua(qua, out loi)
-                : qlKH.CapNhatQua(qua, out loi);
+            bool ok;
+
+            if (laThemMoi)
+            {
+                ok = qlKH.ThemQua(qua, out loi);
+            }
+            else
+            {
+                // Ensure the ID is explicitly copied before updating
+                qua.MaQua = quaDangChon.MaQua;
+                ok = qlKH.CapNhatQua(qua, out loi);
+            }
 
             if (ok)
             {

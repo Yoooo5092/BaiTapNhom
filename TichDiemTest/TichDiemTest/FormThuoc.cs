@@ -132,13 +132,21 @@ namespace TichDiemTest
                 SoLuongTon = (int)numSoLuongTon.Value,
                 NhaSanXuat = txtNhaSanXuat.Text.Trim(),
                 HanSuDung = dtpHanSuDung.Value,
-                MoTa = txtMoTa.Text.Trim(),
-                MaThuoc = thuocDangChon.MaThuoc
+                MoTa = txtMoTa.Text.Trim()
             };
 
-            bool ok = laThemMoi
-                ? qlKH.ThemThuoc(thuoc, out loi)
-                : qlKH.CapNhatThuoc(thuoc, out loi);
+            bool ok;
+
+            if (laThemMoi)
+            {
+                ok = qlKH.ThemThuoc(thuoc, out loi);
+            }
+            else
+            {
+                // Ensure the ID is explicitly copied before updating
+                thuoc.MaThuoc = thuocDangChon.MaThuoc;
+                ok = qlKH.CapNhatThuoc(thuoc, out loi);
+            }
 
             if (ok)
             {
