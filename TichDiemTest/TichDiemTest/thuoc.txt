@@ -1,0 +1,15 @@
+1|Paracetamol 500mg|Viên|3500|1000|Công ty Dược phẩm Hà Nội|2026-12-31|Giảm đau, hạ sốt
+2|Amoxicillin 500mg|Viên|8500|500|Công ty Dược phẩm TW|2026-10-15|Kháng sinh điều trị nhiễm khuẩn
+3|Vitamin C 100mg|Viên|2200|2000|Công ty Dược phẩm Sài Gòn|2027-01-20|Bổ sung Vitamin C
+4|Omeprazole 20mg|Viên|5500|300|Công ty Dược phẩm Đà Nẵng|2026-11-30|Điều trị viêm loét dạ dày
+5|Cetirizine 10mg|Viên|4200|800|Công ty Dược phẩm Huế|2026-12-15|Kháng histamine trị dị ứng
+6|Ibuprofen 400mg|Viên|6800|600|Công ty Dược phẩm Cần Thơ|2027-02-28|Giảm đau, chống viêm
+7|Metformin 500mg|Viên|3800|400|Công ty Dược phẩm Bình Dương|2026-09-15|Điều trị đái tháo đường type 2
+8|Amlodipine 5mg|Viên|4500|350|Công ty Dược phẩm Vĩnh Long|2026-12-01|Điều trị huyết áp cao
+9|Atorvastatin 20mg|Viên|9200|250|Công ty Dược phẩm Tây Ninh|2026-11-10|Giảm cholesterol
+10|Losartan 50mg|Viên|7800|300|Công ty Dược phẩm Long An|2027-01-15|Điều trị huyết áp cao
+11|Diclofenac 50mg|Viên|3200|700|Công ty Dược phẩm Bà Rịa|2026-10-20|Giảm đau, chống viêm
+12|Loratadine 10mg|Viên|2800|900|Công ty Dược phẩm Bình Phước|2026-12-25|Kháng histamine không gây buồn ngủ
+13|Cough Syrup 100ml|Chai|45000|150|Công ty Dược phẩm Đồng Nai|2026-08-30|Xịt ho, long đờm
+14|Eye Drops 10ml|Chai|35000|200|Công ty Dược phẩm Bình Dương|2027-03-15|Thuốc nhỏ mắt khô, mỏi
+15|Bandage 5cm x 5m|Cuộn|15000|500|Công ty Y tế Việt Nam|2028-12-31|Băng gạc y tế

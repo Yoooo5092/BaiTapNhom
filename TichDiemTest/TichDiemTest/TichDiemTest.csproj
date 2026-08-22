@@ -53,8 +53,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDiem.Designer.cs">
       <DependentUpon>FormDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKhachHang.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
@@ -65,21 +71,60 @@
     <Compile Include="FormLichSu.Designer.cs">
       <DependentUpon>FormLichSu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThuoc.Designer.cs">
+      <DependentUpon>FormThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapKho.Designer.cs">
+      <DependentUpon>FormNhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBanThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBanThuoc.Designer.cs">
+      <DependentUpon>FormBanThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaSoLuongGioHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaSoLuongGioHang.Designer.cs">
+      <DependentUpon>FormSuaSoLuongGioHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChiTietDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietDoanhThu.Designer.cs">
+      <DependentUpon>FormChiTietDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQua.Designer.cs">
+      <DependentUpon>FormQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhapKhoQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapKhoQua.Designer.cs">
+      <DependentUpon>FormNhapKhoQua.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs" />
     <Compile Include="LichSuGiaoDich.cs" />
     <Compile Include="QuanLyKhachHang.cs" />
-    <Compile Include="FormKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Thuoc.cs" />
+    <Compile Include="Qua.cs" />
+    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -118,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="thuoc.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

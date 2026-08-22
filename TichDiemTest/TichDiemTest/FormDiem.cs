@@ -9,7 +9,6 @@ namespace TichDiemTest
         private QuanLyKhachHang qlKH;
         private bool laCongDiem;
 
-        // Cờ (flag) dùng để tránh vòng lặp vô hạn khi 2 ô nhảy số gọi chéo nhau
         private bool dangCapNhat = false;
 
         public FormDiem(QuanLyKhachHang ql, KhachHang kh, bool congDiem)
@@ -23,7 +22,7 @@ namespace TichDiemTest
             lblTieuDe.Text = laCongDiem ? "Thông tin hóa đơn & cộng điểm" : "Thông tin đổi quà";
             btnXacNhan.Text = laCongDiem ? "Cộng điểm" : "Đổi quà";
 
-            lblThongTin.Text = $"Khách hàng: {kh.HoTen} (SĐT: {kh.SoDienThoai})\nĐiểm hiện tại: {kh.DiemTichLuy:N0} | Cấp bậc: {kh.CapBac}";
+            lblThongTin.Text = "Khách hàng: " + kh.HoTen + " (SĐT: " + kh.SoDienThoai + ")\nĐiểm hiện tại: " + kh.DiemTichLuy.ToString("N0");
 
             if (!laCongDiem)
             {
@@ -50,7 +49,6 @@ namespace TichDiemTest
             if (dangCapNhat) return;
             dangCapNhat = true;
             numTienHoaDon.Value = numDiem.Value * 1000;
-
             dangCapNhat = false;
         }
 

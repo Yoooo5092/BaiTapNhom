@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -54,7 +54,7 @@ namespace TichDiemTest
             this.lblTien.Name = "lblTien";
             this.lblTien.Size = new System.Drawing.Size(360, 15);
             this.lblTien.TabIndex = 2;
-            this.lblTien.Text = "Nhập tiền hóa đơn (VND):";
+            this.lblTien.Text = "Nhập tiền hóa đơn (VNĐ):";
             // 
             // numTienHoaDon
             // 
@@ -99,6 +99,11 @@ namespace TichDiemTest
             // 
             // btnXacNhan
             // 
+            this.btnXacNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnXacNhan.FlatAppearance.BorderSize = 0;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnXacNhan.ForeColor = System.Drawing.Color.White;
             this.btnXacNhan.Location = new System.Drawing.Point(180, 210);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(90, 35);
@@ -108,15 +113,18 @@ namespace TichDiemTest
             // btnHuy
             // 
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnHuy.Location = new System.Drawing.Point(280, 210);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(90, 35);
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // FormDiem
             // 
             this.AcceptButton = this.btnXacNhan;
+            this.btnXacNhan.Click += new System.EventHandler(this.BtnXacNhan_Click);
             this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(400, 260);
             this.Controls.Add(this.lblTieuDe);

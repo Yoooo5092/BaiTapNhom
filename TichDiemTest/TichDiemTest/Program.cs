@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TichDiemTest
@@ -13,6 +10,13 @@ namespace TichDiemTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DatabaseHelper.Initialize(
+                server: "42.113.173.5,3636",
+                database: "TestTichDiem",
+                user: "sa",
+                password: "YourPassword123!"
+            );
+
             Application.Run(new Form1());
         }
     }

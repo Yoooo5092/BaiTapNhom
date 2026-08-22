@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,6 +16,7 @@ namespace TichDiemTest
             }
             base.Dispose(disposing);
         }
+
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
@@ -23,13 +24,11 @@ namespace TichDiemTest
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDiem = new System.Windows.Forms.TextBox();
-            this.txtCapBac = new System.Windows.Forms.TextBox();
             this.txtNgayDK = new System.Windows.Forms.TextBox();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDiem = new System.Windows.Forms.Label();
-            this.lblCapBac = new System.Windows.Forms.Label();
             this.lblNgayDK = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -37,123 +36,132 @@ namespace TichDiemTest
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(180, 50);
+            this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtHoTen.Location = new System.Drawing.Point(150, 40);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(100, 20);
-            this.txtHoTen.TabIndex = 3;
+            this.txtHoTen.Size = new System.Drawing.Size(250, 25);
+            this.txtHoTen.TabIndex = 1;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(180, 76);
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtSDT.Location = new System.Drawing.Point(150, 80);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(100, 20);
-            this.txtSDT.TabIndex = 5;
+            this.txtSDT.Size = new System.Drawing.Size(250, 25);
+            this.txtSDT.TabIndex = 3;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(180, 102);
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtEmail.Location = new System.Drawing.Point(150, 120);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 7;
+            this.txtEmail.Size = new System.Drawing.Size(250, 25);
+            this.txtEmail.TabIndex = 5;
             // 
             // txtDiem
             // 
             this.txtDiem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtDiem.Enabled = false;
-            this.txtDiem.Location = new System.Drawing.Point(180, 170);
+            this.txtDiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.txtDiem.Location = new System.Drawing.Point(150, 160);
             this.txtDiem.Name = "txtDiem";
-            this.txtDiem.Size = new System.Drawing.Size(100, 20);
-            this.txtDiem.TabIndex = 9;
-            // 
-            // txtCapBac
-            // 
-            this.txtCapBac.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtCapBac.Enabled = false;
-            this.txtCapBac.Location = new System.Drawing.Point(180, 208);
-            this.txtCapBac.Name = "txtCapBac";
-            this.txtCapBac.Size = new System.Drawing.Size(100, 20);
-            this.txtCapBac.TabIndex = 11;
+            this.txtDiem.Size = new System.Drawing.Size(250, 25);
+            this.txtDiem.TabIndex = 7;
+            this.txtDiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNgayDK
             // 
             this.txtNgayDK.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtNgayDK.Enabled = false;
-            this.txtNgayDK.Location = new System.Drawing.Point(180, 134);
+            this.txtNgayDK.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNgayDK.Location = new System.Drawing.Point(150, 200);
             this.txtNgayDK.Name = "txtNgayDK";
-            this.txtNgayDK.Size = new System.Drawing.Size(100, 20);
-            this.txtNgayDK.TabIndex = 13;
+            this.txtNgayDK.Size = new System.Drawing.Size(250, 25);
+            this.txtNgayDK.TabIndex = 9;
             // 
             // lblHoTen
             // 
-            this.lblHoTen.Location = new System.Drawing.Point(62, 53);
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblHoTen.Location = new System.Drawing.Point(30, 43);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(100, 23);
-            this.lblHoTen.TabIndex = 2;
+            this.lblHoTen.Size = new System.Drawing.Size(54, 19);
+            this.lblHoTen.TabIndex = 0;
             this.lblHoTen.Text = "Họ tên:";
             // 
             // lblSDT
             // 
-            this.lblSDT.Location = new System.Drawing.Point(62, 79);
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblSDT.Location = new System.Drawing.Point(30, 83);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(100, 23);
-            this.lblSDT.TabIndex = 4;
-            this.lblSDT.Text = "Số ĐT:";
+            this.lblSDT.Size = new System.Drawing.Size(93, 19);
+            this.lblSDT.TabIndex = 2;
+            this.lblSDT.Text = "Số điện thoại:";
             // 
             // lblEmail
             // 
-            this.lblEmail.Location = new System.Drawing.Point(62, 105);
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblEmail.Location = new System.Drawing.Point(30, 123);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(100, 17);
-            this.lblEmail.TabIndex = 6;
+            this.lblEmail.Size = new System.Drawing.Size(45, 19);
+            this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email:";
             // 
             // lblDiem
             // 
-            this.lblDiem.Location = new System.Drawing.Point(62, 170);
+            this.lblDiem.AutoSize = true;
+            this.lblDiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.lblDiem.Location = new System.Drawing.Point(30, 163);
             this.lblDiem.Name = "lblDiem";
-            this.lblDiem.Size = new System.Drawing.Size(100, 18);
-            this.lblDiem.TabIndex = 8;
-            this.lblDiem.Text = "Điểm:";
-            // 
-            // lblCapBac
-            // 
-            this.lblCapBac.Location = new System.Drawing.Point(62, 211);
-            this.lblCapBac.Name = "lblCapBac";
-            this.lblCapBac.Size = new System.Drawing.Size(100, 23);
-            this.lblCapBac.TabIndex = 10;
-            this.lblCapBac.Text = "Cấp bậc:";
+            this.lblDiem.Size = new System.Drawing.Size(83, 19);
+            this.lblDiem.TabIndex = 6;
+            this.lblDiem.Text = "Điểm tích lũy:";
             // 
             // lblNgayDK
             // 
-            this.lblNgayDK.Location = new System.Drawing.Point(62, 134);
+            this.lblNgayDK.AutoSize = true;
+            this.lblNgayDK.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblNgayDK.Location = new System.Drawing.Point(30, 203);
             this.lblNgayDK.Name = "lblNgayDK";
-            this.lblNgayDK.Size = new System.Drawing.Size(100, 23);
-            this.lblNgayDK.TabIndex = 12;
+            this.lblNgayDK.Size = new System.Drawing.Size(73, 19);
+            this.lblNgayDK.TabIndex = 8;
             this.lblNgayDK.Text = "Ngày ĐK:";
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(65, 302);
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(150, 260);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(90, 35);
-            this.btnLuu.TabIndex = 14;
+            this.btnLuu.Size = new System.Drawing.Size(110, 38);
+            this.btnLuu.TabIndex = 10;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
             // 
             // btnHuy
             // 
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuy.Location = new System.Drawing.Point(190, 302);
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHuy.Location = new System.Drawing.Point(270, 260);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(90, 35);
-            this.btnHuy.TabIndex = 15;
+            this.btnHuy.Size = new System.Drawing.Size(110, 38);
+            this.btnHuy.TabIndex = 11;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // FormKhachHang
             // 
             this.AcceptButton = this.btnLuu;
             this.CancelButton = this.btnHuy;
-            this.ClientSize = new System.Drawing.Size(420, 380);
+            this.ClientSize = new System.Drawing.Size(450, 330);
             this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.lblSDT);
@@ -162,8 +170,6 @@ namespace TichDiemTest
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblDiem);
             this.Controls.Add(this.txtDiem);
-            this.Controls.Add(this.lblCapBac);
-            this.Controls.Add(this.txtCapBac);
             this.Controls.Add(this.lblNgayDK);
             this.Controls.Add(this.txtNgayDK);
             this.Controls.Add(this.btnLuu);
@@ -175,12 +181,11 @@ namespace TichDiemTest
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
 
-        private TextBox txtHoTen, txtSDT, txtEmail, txtDiem, txtCapBac, txtNgayDK;
-        private Label lblHoTen, lblSDT, lblEmail, lblDiem, lblCapBac, lblNgayDK;
+        private TextBox txtHoTen, txtSDT, txtEmail, txtDiem, txtNgayDK;
+        private Label lblHoTen, lblSDT, lblEmail, lblDiem, lblNgayDK;
         private Button btnLuu, btnHuy;
     }
 }

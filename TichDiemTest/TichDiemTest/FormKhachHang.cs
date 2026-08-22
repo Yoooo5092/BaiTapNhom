@@ -27,12 +27,10 @@ namespace TichDiemTest
                 txtHoTen.Text = khachHang.HoTen;
                 txtSDT.Text = khachHang.SoDienThoai;
                 txtEmail.Text = khachHang.Email;
-                txtDiem.Text = khachHang.DiemTichLuy.ToString();
-                txtCapBac.Text = khachHang.CapBac;
+                txtDiem.Text = khachHang.DiemTichLuy.ToString("N0");
                 txtNgayDK.Text = khachHang.NgayDangKy.ToString("dd/MM/yyyy");
 
                 txtDiem.ReadOnly = true;
-                txtCapBac.ReadOnly = true;
                 txtNgayDK.ReadOnly = true;
             }
         }
